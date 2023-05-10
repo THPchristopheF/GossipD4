@@ -1,0 +1,15 @@
+<h1>Bienvenue <%= @first_name %>  </h1>
+<br>
+
+<div class="container p-3 my-3 bg-light text-dark border">
+<div class="card mx-auto" style="width:400px">
+
+  <img class="card-img-top" src="https://www.looper.com/img/gallery/the-best-time-dwight-schrute-ever-broke-character-on-the-office/intro-1620063081.webp" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title"><%=@profile.first_name%> <%=@profile.last_name%></h4>
+    <p class="card-text">Age: <%=@profile.age%> </p>
+    <p class="card-text">Email: <%=@profile.email%> </p>
+    <p class="card-text">City: <%=City.find(@profile.city_id).name%> </p>
+  </div>
+</div>
+</div>

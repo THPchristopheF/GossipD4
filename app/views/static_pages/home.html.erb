@@ -1,0 +1,20 @@
+<h1>Envie de bitcher?</h1>
+<br>
+
+
+<!-- GOSSIPS DISPLAY -->
+<div class="container-fluid">
+	<div class="row">
+		<% params[:gossip_array].each do |gossip| %>
+		<div class= "col-sm text-center" > 
+			<div class="card" style="width: 18rem;">
+			  <div class="card-body">
+			    <h5 class="card-title"><%=  link_to "#{gossip.title}",dynamic_pages_gossip_path(:id => gossip.id) %> </h5>
+					<br>
+          <h7 class="card-title">Auteur: <%=  link_to "#{User.find(gossip.user_id).first_name} #{User.find(gossip.user_id).last_name} ",dynamic_pages_profile_path(:id => gossip.user_id) %> </h7>
+   		  </div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
