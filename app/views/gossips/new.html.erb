@@ -1,0 +1,33 @@
+
+<body data-turbo="false">
+<div class="container p-3 my-3 bg-white-light text-dark ">
+<% if !@newgossip.nil? && @newgossip.errors.any? %>
+<% pp @newgossip %>
+<% pp  @newgossip.errors %>
+<div class="alert alert-danger" role="alert">
+<p> Ton post n'a pas ete sauvegardé car il n'est pas valide </p>
+<ul>
+    <% @newgossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+<div class="container p-3 my-3 bg-light text-dark border">
+
+  <form action= <%= gossips_path %> method="POST">
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+    <input type="text" id="title" name="gossip_title" value="Enter your gossip title">
+    
+    <br><br>
+    <textarea name="gossip_text" rows="5" cols="120" >Enter your gossip text</textarea>   <br>
+   
+    <input type="submit" value="Valider">
+  </form>
+
+  
+  </div>
+  </body>
+
+
+ 
