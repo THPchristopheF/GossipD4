@@ -1,0 +1,19 @@
+
+<div class="container-fluid">
+<h3 class="text-info" style="text-align:center"><mark>City of <%= @city.name%> - <%= @city.zip_code %></mark></h3>
+</div>
+<div class="container-fluid">
+<div class="row">
+  <% @gossip_of_the_city.each do |gossip| %>
+  <div class= "col-sm-3 text-center" > 
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%=  link_to "#{gossip.title}",gossip_path(:id => gossip.id) %> </h5>
+        <br>
+        <h7 class="card-title">Auteur: <%=  link_to "#{User.find(gossip.user_id).first_name} #{User.find(gossip.user_id).last_name} ",user_path(:id => gossip.user_id) %> </h7>
+       </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

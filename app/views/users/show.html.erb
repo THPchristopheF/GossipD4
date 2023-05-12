@@ -19,10 +19,13 @@
 
   <img class="card-img-top" src="https://www.looper.com/img/gallery/the-best-time-dwight-schrute-ever-broke-character-on-the-office/intro-1620063081.webp" alt="Card image">
   <div class="card-body">
-    <h4 class="card-title"><%=@profile.first_name%> <%=@profile.last_name%></h4>
-    <p class="card-text">Age: <%=@profile.age%> </p>
-    <p class="card-text">Email: <%=@profile.email%> </p>
-    <p class="card-text">City: <%=City.find(@profile.city_id).name%> </p>
+    <h4 class="card-title" style="text-align:center" ><%=@user.first_name%> <%=@user.last_name%></h4>
+    <p><br></p>
+    <p class="card-text">Description: <%=@user.description%> </p>
+    <p class="card-text">Age: <%=@user.age%> </p>
+    <p class="card-text">Email: <%=@user.email%> </p>
+    <p class="card-text">City: <%=  link_to "#{City.find(@user.city_id).name}",city_path(:id => @user.city_id) %> </p>
+  
   </div>
 </div>
 </div>

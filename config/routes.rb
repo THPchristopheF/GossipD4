@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # root "articles#index
   #jour2
   resources :gossips
+  resources :users
+  resources :cities
 end
